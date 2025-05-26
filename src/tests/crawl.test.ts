@@ -1,4 +1,4 @@
-import { normalizeURL } from "../url_normalize";
+import { normalizeURL } from "../crawl";
 import {expect, test} from 'vitest';
 
 
