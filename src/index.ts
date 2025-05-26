@@ -1,4 +1,6 @@
-function main() {
+import { getHTML } from "./crawl";
+
+async function main() {
     const args = process.argv.slice(2);
 
     if (args.length === 0) {
@@ -10,11 +12,20 @@ function main() {
         console.error("Error: too many arguments");
         process.exit(1);
     }
-
     const baseURL = args[0];
+    try {
+
+
     console.log(`Crawler starting on ${baseURL}...`);
 
+    await getHTML(baseURL);
+
+    //console.log(pageHTML);
+
     process.exit(0);
+    } catch (err) {
+        console.log(`error fetching ${baseURL}: ${(err as Error).message}`);
+    }
 }
 
 main();

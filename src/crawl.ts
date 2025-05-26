@@ -34,3 +34,20 @@ export function getURLsFromHTML(html: string, baseURL: string){
 
   return extractedLinks;
 }
+
+export async function getHTML(url: string) {
+  try {
+    const resp = await fetch(url);
+
+    if (resp.status >= 400) {
+      throw new Error (`Error fetching website: ${resp.statusText}`);
+    }
+    if (!(resp.headers.get("Content-Type")?.startsWith("text/html"))){
+      throw new Error(`Not a HTML page, received ${resp.headers.get("Content-Type")}`);
+    }
+    const htmlContent = await resp.text();
+    console.log(htmlContent);
+  } catch (err){
+        console.log(`${(err as Error).message}: ${url}`);
+  }
+}
