@@ -1,0 +1,25 @@
+{
+  "name": "webcrawler",
+  "version": "1.0.0",
+  "description": "Generates an internal links report for a website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsx ./src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bzelaznicki/WebCrawler.git"
+  },
+  "author": "Bartosz Żelaźnicki",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bzelaznicki/WebCrawler/issues"
+  },
+  "homepage": "https://github.com/bzelaznicki/WebCrawler#readme",
+  "devDependencies": {
+    "@types/node": "^22.15.21",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}
