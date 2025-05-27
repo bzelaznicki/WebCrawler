@@ -1,4 +1,5 @@
 import { crawlPage, getHTML } from "./crawl";
+import { printReport } from "./report";
 
 async function main() {
     const args = process.argv.slice(2);
@@ -20,7 +21,7 @@ async function main() {
 
     const links = await crawlPage(baseURL, baseURL);
 
-    console.log(links);
+      printReport(baseURL, links);
 
     process.exit(0);
     } catch (err) {
